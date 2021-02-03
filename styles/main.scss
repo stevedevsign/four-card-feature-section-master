@@ -44,11 +44,11 @@ body {
         color: $Gray-Blue;
     }
 
-    @media screen and (max-width:414px) {
+    @media screen and (max-width:550px) {
         margin-top: 5rem;
         padding: 0 10px 0;
     }
-    @media screen and (max-width:768px) {
+    @media screen and (max-width:784px) {
         padding: 0 8px 0;
     }
 }
@@ -67,7 +67,7 @@ body {
         font-weight: 600;
     }
 
-    @media screen and (max-width:414px){
+    @media screen and (max-width:550px){
         h1, h2 {
             font-size: 1.6rem;
         }
@@ -93,7 +93,7 @@ body {
         margin-bottom: 10px;
     }
 
-    @media screen and (max-width:414px) {
+    @media screen and (max-width:550px) {
         grid-template-columns: repeat(1, 1fr);
     }
 }
@@ -113,7 +113,7 @@ body {
         margin-top: 40px;
     }
 
-    @media screen and(max-width:414px) {
+    @media screen and(max-width:550px) {
         width: 300px;
         justify-self: center !important;
     }
