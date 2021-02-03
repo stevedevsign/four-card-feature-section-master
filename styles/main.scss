@@ -1,0 +1,146 @@
+// Variables
+$font-size: 15px;
+
+$font-family: "Poppins", sans-serif;
+
+// Colours
+$Red: hsl(0, 78%, 62%);
+$Cyan: hsl(180, 62%, 55%);
+$Orange: hsl(34, 97%, 64%);
+$Blue: hsl(212, 86%, 64%);
+
+// Neutral Colours
+$Dark-Blue: hsl(234, 12%, 34%);
+$Gray-Blue: hsl(229, 6%, 66%);
+$Light-Gray: hsl(0, 0%, 98%);
+
+// Resolution
+$max-width: 1440px;
+$mobile-width: 375px;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: $font-family;
+    font-size: $font-size;
+    height: 100vh;
+}
+
+.container {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 90px;
+    h1,
+    h2,
+    h3 {
+        color: $Dark-Blue;
+    }
+    p {
+        color: $Gray-Blue;
+    }
+
+    @media (max-width:375px) {
+        margin-top: 5rem;
+        padding: 0 10px 0;
+    }
+}
+
+.content {
+    text-align: center;
+    margin-bottom: 60px;
+    h1 {
+        margin-top: 5%;
+        font-weight: 200;
+    }
+    h2 {
+        margin-bottom: 25px;
+        font-size: 1.85rem;
+        font-weight: 600;
+    }
+
+    @media (max-width:375px){
+        h1, h2 {
+            font-size: 1.6rem;
+        }
+        p {
+            text-align: center;
+        }
+    }
+}
+
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    gap: 20px;
+    justify-items: center;
+    align-items: flex-end;
+
+    h3 {
+        margin-bottom: 10px;
+    }
+
+    @media (max-width:375px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@mixin card($color) {
+    display: flex;
+    flex-direction: column;
+    // flex-wrap: wrap;
+    width: 350px;
+    height: 250px;
+    border-radius: 6px;
+    padding: 25px;
+    border-top: 4px solid $color;
+    box-shadow: 0px 18px 24px -9px rgba(181,174,194,0.8);
+
+    .icon{
+        width: 20%;
+        align-self: flex-end;
+        margin-top: 40px;
+    }
+
+    @media (max-width:375px) {
+        width: 300px;
+        justify-self: center !important;
+    }
+}
+
+.a-card {
+    @include card($Cyan);
+    grid-row: auto / span 2;
+    align-self: center;
+    justify-self: right;
+}
+.b-card {
+    @include card($Red);
+}
+.c-card {
+    @include card($Blue);
+    grid-row: auto / span 2;
+    align-self: center;
+    justify-self: left;
+}
+.d-card {
+    @include card($Orange);
+    grid-column: auto / span 1fr;
+}
+
+
+.attribution {
+    margin-top: 2.5rem;
+    font-size: 11px;
+    text-align: center;
+    a {
+        color: hsl(228, 45%, 44%);
+    }
+}
